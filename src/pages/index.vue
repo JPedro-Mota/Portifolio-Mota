@@ -34,22 +34,19 @@
         </div>
 
         <div class="profile-img">
-          <img src="../assets/image.png" />
+          <img src="../assets/image.png">
         </div>
       </div>
 
       <p class="title-about">Sobre Mim</p>
 
-      <div class="about-section">
-        <div class="text-about">
-          <p>
+      <v-container class="cards-row" fluid>
+        <v-row>
+          <p class="text-about">
             I'm a passionate fullstack developer with 5+ years of experience building web applications. I specialize in JavaScript, React, Node.js, and modern web technologies.
             My journey in software development started when I built my first website at 15. Since then, I've worked with startups and established companies to create efficient, scalable, and user-friendly applications.
             When I'm not coding, you can find me hiking, reading tech blogs, or contributing to open-source projects. I'm always looking to learn new technologies and improve my skills.
           </p>
-        </div>
-
-        <v-row>
           <v-col cols="12" md="5">
             <v-container class="cards-container" fluid>
               <v-row class="cards-row" justify="center">
@@ -60,7 +57,10 @@
                   md="6"
                   sm="6"
                 >
-                  <v-card class="pa-4 rounded-xl text-white card-elevation" :class="card.color">
+                  <v-card
+                    class="pa-4 rounded-xl text-white card-elevation d-flex flex-column fill-height"
+                    :class="card.color"
+                  >
                     <div class="icon mb-4">
                       <v-icon size="36">{{ card.icon }}</v-icon>
                     </div>
@@ -72,40 +72,40 @@
             </v-container>
           </v-col>
         </v-row>
-      </div>
+      </v-container>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import NavBar from '@/components/NavBar.vue';
+  import NavBar from '@/components/NavBar.vue';
 
-const cards = [
-  {
-    icon: 'mdi-monitor',
-    title: 'Frontend Development',
-    text: 'Creating responsive and interactive user interfaces with modern frameworks',
-    color: 'card-dark',
-  },
-  {
-    icon: 'mdi-server',
-    title: 'Backend Development',
-    text: 'Building scalable APIs and server-side logic with Java Spring Boot',
-    color: 'card-dark',
-  },
-  {
-    icon: 'mdi-database',
-    title: 'Database Design',
-    text: 'Designing efficient data structures and managing PostgreSQL & MySQL',
-    color: 'card-dark',
-  },
-  {
-    icon: 'mdi-cloud',
-    title: 'DevOps & Deployment',
-    text: 'CI/CD pipelines and cloud deployment on services like Heroku or Docker',
-    color: 'card-dark',
-  },
-];
+  const cards = [
+    {
+      icon: 'mdi-monitor',
+      title: 'Frontend Development',
+      text: 'Creating responsive and interactive user interfaces with modern frameworks',
+      color: 'card-dark',
+    },
+    {
+      icon: 'mdi-server',
+      title: 'Backend Development',
+      text: 'Building scalable APIs and server-side logic with Java Spring Boot',
+      color: 'card-dark',
+    },
+    {
+      icon: 'mdi-database',
+      title: 'Database Design',
+      text: 'Designing efficient data structures and managing PostgreSQL & MySQL',
+      color: 'card-dark',
+    },
+    {
+      icon: 'mdi-cloud',
+      title: 'DevOps & Deployment',
+      text: 'CI/CD pipelines and cloud deployment on services like Heroku or Docker',
+      color: 'card-dark',
+    },
+  ];
 </script>
 
 <style scoped>
@@ -167,16 +167,15 @@ body {
 
 .title-about {
   font-size: 62px;
-  margin-bottom: 20px;
+  margin-bottom: 2vh;
   text-align: center;
   margin-top: 5%;
 }
 
 .text-about {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  font-size: 18px;
+  width: 100vh ;
+  margin: 40px;
+  font-size: 22px;
   line-height: 1.6;
 }
 
